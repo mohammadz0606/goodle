@@ -18,14 +18,13 @@ class Headers extends StatelessWidget {
             fontSize: 30.sp,
           ),
         ),
-        SizedBox(height: 28.sp),
+        SizedBox(height: 5.sp),
         Text(
           "How was your Day ?",
          style: Theme.of(context).textTheme.titleLarge!.copyWith(
            color: AppColors.greenLight.withOpacity(0.8),
            fontSize: 30.sp,
          ),
-
         ),
       ],
     );

@@ -32,7 +32,7 @@ class _SliderGoodleState extends State<SliderGoodle>
 
   final List<String> _images = [
     "assets/images/happy NS.svg",
-    "assets/images/anger NS.svg",
+    "assets/images/anger smaller (1).svg",
     "assets/images/bord NS.svg",
     "assets/images/Sad NS.svg",
   ];
@@ -61,6 +61,10 @@ class _SliderGoodleState extends State<SliderGoodle>
         physics: const ClampingScrollPhysics(),
         itemBuilder: (context, index) {
           return InkWell(
+            hoverColor: AppColors.transparent,
+            highlightColor: AppColors.transparent,
+            focusColor: AppColors.transparent,
+            splashColor: AppColors.transparent,
             onTap: () {
               Navigator.of(context).pushNamed(
                 StatusDayScreen.route,
@@ -78,7 +82,7 @@ class _SliderGoodleState extends State<SliderGoodle>
                 child: Column(
                   children: [
                     Expanded(
-                      flex: 27,
+                      flex: 35,
                       child: BodySliderGoodle(
                         image: _images[index],
                         cardColor: _colorsGoodle[index],
@@ -93,7 +97,6 @@ class _SliderGoodleState extends State<SliderGoodle>
                           fontSize: 30.sp,
                           color: AppColors.black,
                         ),
-
                       ),
                     ),
                   ],

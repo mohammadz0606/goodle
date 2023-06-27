@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -83,42 +85,60 @@ class StatusDayBody extends StatelessWidget {
       barrierDismissible: false,
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          backgroundColor: AppColors.white.withOpacity(0.77),
-          content: Container(
-            height: 290,
-            width: 354,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Update your feeling",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontSize: 30.sp,
-                        color: AppColors.orange,
-                      ),
-                  textAlign: TextAlign.center,
+        return WillPopScope(
+          onWillPop: () async {
+            Navigator.of(context).pop();
+            Navigator.of(context).pop();
+            return false;
+          },
+          child: Stack(
+            children: [
+              BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                child: Container(
+                  color: Colors.transparent,
                 ),
-                const SizedBox(height: 25),
-                IconButton(
-                  color: AppColors.orange,
-                  icon: const Icon(
-                    FontAwesomeIcons.rotateRight,
-                    size: 33,
+              ),
+              AlertDialog(
+                backgroundColor: AppColors.white.withOpacity(0.79),
+                content: Container(
+                  height: 290,
+                  width: 354,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    Navigator.of(context).pop();
-                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Update your feeling",
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontSize: 30.sp,
+                          color: AppColors.orange,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 25),
+                      IconButton(
+                        color: AppColors.orange,
+                        icon: const Icon(
+                          FontAwesomeIcons.rotateRight,
+                          size: 33,
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },
     );
   }
+
 }

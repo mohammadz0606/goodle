@@ -29,7 +29,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       textInputAction: TextInputAction.newline,
       keyboardType: TextInputType.multiline,
       maxLines: null,
-      style: Theme.of(context).textTheme.titleLarge!.copyWith(
+      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
             color: AppColors.white,
             fontSize: 15.5.sp,
           ),
@@ -38,7 +38,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         hintText: "Tell how was your day ?",
         hintStyle:
         Theme.of(context).textTheme.titleLarge!.copyWith(
-          color: AppColors.white,
+          color: AppColors.white.withOpacity(0.7),
           fontSize: 15.sp,
         ),
         enabled: true,
@@ -52,9 +52,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
   OutlineInputBorder _buildOutlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(25.r),
-      borderSide: const BorderSide(
+      borderSide: BorderSide(
         width: 1.5,
-        color: AppColors.white,
+        color: AppColors.white.withOpacity(0.7),
       ),
     );
   }

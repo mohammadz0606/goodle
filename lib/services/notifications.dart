@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
@@ -26,6 +27,7 @@ class NotificationServices {
     );
 
     await _notificationsPlugin.initialize(settings);
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   }
 
   static Future<NotificationDetails> _notificationDetails() async {
@@ -53,7 +55,7 @@ class NotificationServices {
   }
 
   Future<void> scheduleNotificationPeriodically() async {
-    const Duration interval = Duration(hours: 10);
+    const Duration interval = Duration(hours: 12);
 
     Timer.periodic(
       interval,
@@ -72,5 +74,49 @@ class NotificationServices {
         );
       },
     );
+  }
+
+  static Future<void> _firebaseMessagingBackgroundHandler(
+    RemoteMessage message,
+  ) async {
+    final NotificationServices notificationServices = NotificationServices();
+    await notificationServices._displayNotification(message);
+  }
+
+  Future<void> _displayNotification(RemoteMessage message) async {
+    final notificationData = message.notification;
+    if (notificationData != null) {
+      final title = notificationData.title;
+      final body = notificationData.body;
+
+      AndroidNotificationDetails androidNotificationDetails =
+          const AndroidNotificationDetails(
+        "channel_id",
+        "channel_name",
+        channelDescription: "channel_description",
+        importance: Importance.max,
+        playSound: true,
+        priority: Priority.max,
+      );
+
+      DarwinNotificationDetails iosNotificationDetails =
+          const DarwinNotificationDetails(
+        presentAlert: true,
+        presentBadge: true,
+        presentSound: true,
+      );
+
+      final notification = NotificationDetails(
+        android: androidNotificationDetails,
+        iOS: iosNotificationDetails,
+      );
+
+      await _notificationsPlugin.show(
+        0,
+        title,
+        body,
+        notification,
+      );
+    }
   }
 }

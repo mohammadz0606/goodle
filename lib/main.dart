@@ -4,20 +4,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:goodly/helper/colors.dart';
 import 'package:goodly/screens/home.dart';
 import 'package:goodly/services/notifications.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 import 'screens/how_its_work.dart';
 import 'screens/privacy.dart';
 import 'screens/splash.dart';
 import 'screens/status_day.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  /*GoogleFonts.pacifico();
-  GoogleFonts.montserrat();*/
+  await _initializeFirebaseApp();
   _setPreferredOrientations();
   _setSystemUIOverlayStyle();
   _initNotifications();
   runApp(const Goodle());
+}
+
+Future<FirebaseApp> _initializeFirebaseApp() {
+  return Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
 }
 
 void _setSystemUIOverlayStyle() {
@@ -40,7 +47,6 @@ Future<void> _setPreferredOrientations() {
     ],
   );
 }
-
 
 Future<void> _initNotifications() async {
   NotificationServices notificationServices = NotificationServices();
@@ -76,6 +82,8 @@ class Goodle extends StatelessWidget {
             useMaterial3: true,
             scaffoldBackgroundColor: AppColors.white,
             appBarTheme: const AppBarTheme(
+              surfaceTintColor: Colors.transparent,
+              scrolledUnderElevation: 0,
               iconTheme: IconThemeData(color: AppColors.black),
               elevation: 0,
               centerTitle: true,
@@ -95,7 +103,7 @@ class Goodle extends StatelessWidget {
             HomeScreen.route: (context) => const HomeScreen(),
             HowItsWorkScreen.route: (context) => const HowItsWorkScreen(),
             PrivacyScreen.route: (context) => const PrivacyScreen(),
-            StatusDayScreen.route:(context) => const StatusDayScreen(),
+            StatusDayScreen.route: (context) => const StatusDayScreen(),
           },
         );
       },

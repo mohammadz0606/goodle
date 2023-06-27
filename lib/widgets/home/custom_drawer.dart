@@ -30,14 +30,6 @@ class CustomDrawer extends StatelessWidget {
               children: [
                 _buildListTile(
                   context,
-                  text: "Home",
-                  icon: FontAwesomeIcons.houseChimney,
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-                _buildListTile(
-                  context,
                   text: "How it’s work",
                   icon: FontAwesomeIcons.bookOpenReader,
                   onTap: () {
