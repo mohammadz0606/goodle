@@ -32,8 +32,6 @@ void _setSystemUIOverlayStyle() {
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
-      /*systemNavigationBarColor: AppColors.red,
-      systemNavigationBarDividerColor: AppColors.white,*/
       statusBarBrightness: Brightness.dark,
     ),
   );
@@ -92,8 +90,6 @@ class Goodle extends StatelessWidget {
                 statusBarColor: AppColors.transparent,
                 statusBarBrightness: Brightness.dark,
                 statusBarIconBrightness: Brightness.dark,
-                /*systemNavigationBarColor: AppColors.red,
-                systemNavigationBarDividerColor: AppColors.white,*/
               ),
             ),
           ),
