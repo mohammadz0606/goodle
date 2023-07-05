@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>210460821990-iu2ib50s7c3ppj7pb66ss66kk8bj3trv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.210460821990-iu2ib50s7c3ppj7pb66ss66kk8bj3trv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAyLZ8dHuDVqGCR5oZjQxysp8vU9oAfgJU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>210460821990</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.goodly</string>
+	<key>PROJECT_ID</key>
+	<string>goodle-cdb2a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>goodle-cdb2a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:210460821990:ios:7272faa2634d77be732e27</string>
+</dict>
+</plist>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "210460821990",
+    "project_id": "goodle-cdb2a",
+    "storage_bucket": "goodle-cdb2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210460821990:android:a7f3cf63b22e47db732e27",
+        "android_client_info": {
+          "package_name": "com.example.goodly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210460821990-ce44751jhn8fnbpng4uvbo4qahk0bk2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLSpt9CTLTdNYDUi9zpe8FQSvZXoU3Dqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210460821990-ce44751jhn8fnbpng4uvbo4qahk0bk2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
