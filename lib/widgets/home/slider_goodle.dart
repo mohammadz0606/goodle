@@ -32,7 +32,7 @@ class _SliderGoodleState extends State<SliderGoodle>
 
   final List<String> _images = [
     "assets/images/happy NS.svg",
-    "assets/images/anger smaller (1).svg",
+    "assets/images/sad face.svg",
     "assets/images/bord NS.svg",
     "assets/images/Sad NS.svg",
   ];
@@ -82,7 +82,7 @@ class _SliderGoodleState extends State<SliderGoodle>
                 child: Column(
                   children: [
                     Expanded(
-                      flex: 35,
+                      flex: 30,
                       child: BodySliderGoodle(
                         image: _images[index],
                         cardColor: _colorsGoodle[index],
@@ -90,7 +90,7 @@ class _SliderGoodleState extends State<SliderGoodle>
                     ),
                     SizedBox(height: 19.h),
                     Expanded(
-                      flex: 7,
+                      flex: 10,
                       child: Text(
                         _textGoodle[index],
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(

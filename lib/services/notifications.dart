@@ -55,15 +55,15 @@ class NotificationServices {
   }
 
   Future<void> scheduleNotificationPeriodically() async {
-    const Duration interval = Duration(hours: 12);
+    const Duration interval = Duration(hours: 6);
 
     Timer.periodic(
       interval,
       (Timer timer) async {
         await _notificationsPlugin.zonedSchedule(
           timer.tick,
-          'Periodic Notification',
-          'This is a periodic notification!',
+          'Hey',
+          'How was your day?',
           tz.TZDateTime.now(tz.local).add(interval * timer.tick),
           await _notificationDetails(),
           payload: 'payload_value',

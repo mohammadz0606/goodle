@@ -44,7 +44,7 @@ class StatusDayBody extends StatelessWidget {
                   height: 205.h,
                   child: SvgPicture.asset(
                     image,
-                    //fit: BoxFit.cover,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -113,9 +113,9 @@ class StatusDayBody extends StatelessWidget {
                       Text(
                         "Update your feeling",
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontSize: 30.sp,
-                          color: AppColors.orange,
-                        ),
+                              fontSize: 30.sp,
+                              color: AppColors.orange,
+                            ),
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 25),
@@ -140,5 +140,4 @@ class StatusDayBody extends StatelessWidget {
       },
     );
   }
-
 }

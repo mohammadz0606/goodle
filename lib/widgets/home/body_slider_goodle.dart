@@ -24,6 +24,7 @@ class BodySliderGoodle extends StatelessWidget {
         child: SvgPicture.asset(
           image,
           fit: BoxFit.cover,
+          alignment: const Alignment(0,0.3),
         ),
       ),
     );
