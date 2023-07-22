@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../helper/colors.dart';
+import '../services/analytics.dart';
 
 class PrivacyScreen extends StatelessWidget {
   static const String route = "privacy_screen";
@@ -11,6 +12,7 @@ class PrivacyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AnalyticsApp.trackPageView("Privacy Screen");
     return Scaffold(
       appBar: _buildAppBar(context),
       body: SingleChildScrollView(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../helper/colors.dart';
+import '../services/analytics.dart';
 import '../widgets/status_day/status_day_body.dart';
 
 class StatusDayScreen extends StatelessWidget {
@@ -10,6 +11,7 @@ class StatusDayScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AnalyticsApp.trackPageView("Status Day Screen");
     Map<String, dynamic> statusData =
         ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     return Scaffold(

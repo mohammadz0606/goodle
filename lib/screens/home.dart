@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../helper/colors.dart';
+import '../services/analytics.dart';
 import '../widgets/app_title.dart';
 import '../widgets/home/custom_drawer.dart';
 import '../widgets/home/home_body.dart';
@@ -21,6 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    log("1111111111111111");
+    AnalyticsApp.trackPageView("Home Screen");
     return Scaffold(
       key: _scaffoldKey,
       drawer: const CustomDrawer(),

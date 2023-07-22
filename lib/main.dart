@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:goodly/helper/colors.dart';
 import 'package:goodly/screens/home.dart';
 import 'package:goodly/services/notifications.dart';
@@ -11,6 +12,7 @@ import 'screens/how_its_work.dart';
 import 'screens/privacy.dart';
 import 'screens/splash.dart';
 import 'screens/status_day.dart';
+import 'services/analytics.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,6 +67,9 @@ class Goodle extends StatelessWidget {
         return MaterialApp(
           themeMode: ThemeMode.light,
           debugShowCheckedModeBanner: false,
+          navigatorObservers: [
+            FirebaseAnalyticsObserver(analytics: AnalyticsApp.analytics),
+          ],
           title: 'Goodle',
           theme: ThemeData.light().copyWith(
             textTheme: const TextTheme(

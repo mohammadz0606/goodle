@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../helper/colors.dart';
+import '../services/analytics.dart';
 
 class HowItsWorkScreen extends StatelessWidget {
   static const String route = "how_its_work_screen";
@@ -10,6 +11,7 @@ class HowItsWorkScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AnalyticsApp.trackPageView("How Its Work Screen");
     return Scaffold(
       appBar: _buildAppBar(context),
       body: SingleChildScrollView(
